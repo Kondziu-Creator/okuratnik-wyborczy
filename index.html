@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Okuratnik Wyborczy 2025 - Wersja Alpha</title>
+    <!-- Link do czcionki Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1e3a58; /* Ciemnoniebieskie tło */
+            color: black; /* Biały tekst na tle ciemnym */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #2C6E49; /* Ciemniejszy zielony kolor tła */
+            color: black;
+            padding: 20px;
+            margin: 0;
+            font-size: 36px;
+            font-weight: bold; /* Pogrubienie czcionki */
+            letter-spacing: 1px;
+        }
+
+        .kandydat {
+            background-color: #ffffff; /* Tło kandydatów */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 20px;
+            display: inline-block;
+            width: 280px;
+            vertical-align: top;
+            transition: transform 0.3s;
+        }
+
+        .kandydat:hover {
+            transform: scale(1.05); /* Efekt powiększenia po najechaniu */
+        }
+
+        .kandydat h3 {
+            color: #2C6E49; /* Zielony kolor nagłówków */
+            font-size: 22px;
+            font-weight: bold; /* Pogrubienie czcionki */
+        }
+
+        .kandydat img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .kandydat p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        #quiz {
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 20px;
+            display: inline-block;
+            width: 90%;
+        }
+
+        label {
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 20px;
+            color: #333;
+            font-weight: bold; /* Pogrubienie czcionki */
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #0066cc; /* Niebieski kolor przycisku */
+            color: black;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-weight: bold; /* Pogrubienie czcionki */
+        }
+
+        button:hover {
+            background-color: #004d99; /* Zmiana koloru po najechaniu */
+        }
+
+        #wyniki {
+            display: none;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Okuratnik Wyborczy 2025 - Wersja Alpha</h1>
+
+    <!-- Sekcja quizu -->
+    <div id="quiz">
+        <h3>Pytanie #1: Gdzie leży prawda?</h3>
+        <label>
+            <input type="radio" name="pytanie1" value="a">
+            a) w Moskwie
+        </label>
+        <label>
+            <input type="radio" name="pytanie1" value="b">
+            b) "To, Uciekaj Do Moskwy, Tam Do Swojej Rodziny!"
+        </label>
+        <label>
+            <input type="radio" name="pytanie1" value="c">
+            c) "i Już Nie Ma Prawdy w Moskwie"
+        </label>
+
+        <h3>Pytanie #2: Czy popierasz legalizację Rozpuszczalnika "Nitro"?</h3>
+        <label>
+            <input type="radio" name="pytanie2" value="a">
+            a) "Muszę, Mieć, Lepszq Wiadomość!"
+        </label>
+        <label>
+            <input type="radio" name="pytanie2" value="b">
+            b) "Pachnie Dupq"
+        </label>
+        <label>
+            <input type="radio" name="pytanie2" value="c">
+            c) "O, Róże!"
+        </label>
+
+        <h3>Pytanie #3: Co sądzisz o Ekoludku?</h3>
+        <label>
+            <input type="radio" name="pytanie3" value="a">
+            a) On Pomaga, Ty Hejtujesz!
+        </label>
+        <label>
+            <input type="radio" name="pytanie3" value="b">
+            b) Lekko Przecw*lony
+        </label>
+        <label>
+            <input type="radio" name="pytanie3" value="c">
+            c) Pomagasz Czy Hejtujesz?
+        </label>
+
+        <h3>Pytanie #4: Czy Ziemia jest płaska?</h3>
+        <label>
+            <input type="radio" name="pytanie4" value="a">
+            a) Płaska!
+        </label>
+        <label>
+            <input type="radio" name="pytanie4" value="b">
+            b) "Jest Pół-okrągła"
+        </label>
+        <label>
+            <input type="radio" name="pytanie4" value="c">
+            c) "Ma Ość Jakąś"
+        </label>
+
+        <h3>Pytanie #5: Kto zatrzymał Ziemię i Słońce?</h3>
+        <label>
+            <input type="radio" name="pytanie5" value="a">
+            a) Mikołaj Kopernik
+        </label>
+        <label>
+            <input type="radio" name="pytanie5" value="b">
+            b) Orbit
+        </label>
+        <label>
+            <input type="radio" name="pytanie5" value="c">
+            c) "A Nie, Bo Kopernik"
+        </label>
+
+        <h3>Pytanie #6: POmagasz czy Hejtujesz?</h3>
+        <label>
+            <input type="radio" name="pytanie6" value="a">
+            a) Tak
+        </label>
+        <label>
+            <input type="radio" name="pytanie6" value="b">
+            b) Nie
+        </label>
+        <label>
+            <input type="radio" name="pytanie6" value="c">
+            c) Pomagam Hejtując
+        </label>
+    </div>
+
+    <!-- Przycisk zakończenia quizu -->
+    <button onclick="pokazWyniki()">Zakończ Quiz</button>
+
+    <!-- Sekcja wyników (początkowo ukryta) -->
+    <div id="wyniki">
+        <h2>Twoje wyniki:</h2>
+        <div class="kandydat">
+            <h3>Krzysztof Kononowicz</h3>
+            <img src="konon.jpg" alt="Krzysztof Kononowicz" width="200">
+            <p>Styl polityczny: Prezydent Bombasu, Prawnuk Józefa Klemensa Piłsudskiego, Zyskał Popularność w 2006r.</p>
+            <p>Podobieństwo: <span id="kononowicz-procent"></span>%</p>
+        </div>
+        <div class="kandydat">
+            <h3>Wojciech Suchodolski</h3>
+            <img src="suchodolski.jpg" alt="Wojciech Suchodolski" width="200">
+            <p>Styl polityczny: Przedsiębiorca, Olkoholik, Laluś, Zyskał Popularność w 2016r.</p>
+            <p>Podobieństwo: <span id="suchodolski-procent"></span>%</p>
+        </div>
+        <div class="kandydat">
+            <h3>Jarosław Andrzejewski</h3>
+            <img src="andrzejewski.jpg" alt="Jarosław Andrzejewski" width="200">
+            <p>Styl polityczny: Zyskał Popularność w 2017r. Były Redaktor K. Kononowicza.</p>
+            <p>Podobieństwo: <span id="andrzejewski-procent"></span>%</p>
+        </div>
+        <div class="kandydat">
+            <h3>Rafał Kosno</h3>
+            <img src="kosno.jpg" alt="Rafał Kosno" width="200">
+            <p>Styl polityczny: Hobokowy Ekolog, Delikatnie Przecw*lony, Chińczyko-Japończyk.</p>
+            <p>Podobieństwo: <span id="kosno-procent"></span>%</p>
+        </div>
+    </div>
+
+    <script>
+        // Funkcja obliczająca wyniki
+        function pokazWyniki() {
+            const wyniki = {
+                kononowicz: 0,
+                suchodolski: 0,
+                andrzejewski: 0,
+                kosno: 0
+            };
+
+            // Zliczanie odpowiedzi
+            for (let i = 1; i <= 6; i++) {
+                const odpowiedz = document.querySelector(`input[name="pytanie${i}"]:checked`);
+                if (odpowiedz) {
+                    switch (odpowiedz.value) {
+                        case 'a': wyniki.kononowicz++; break;
+                        case 'b': wyniki.suchodolski++; break;
+                        case 'c': wyniki.andrzejewski++; break;
+                    }
+                }
+            }
+
+            // Obliczanie procentów
+            let totalPunkty = 6;
+            for (let kandydat in wyniki) {
+                let procent = (wyniki[kandydat] / totalPunkty) * 100;
+                document.getElementById(`${kandydat}-procent`).innerText = Math.round(procent);
+            }
+
+            // Pokazanie wyników
+            document.getElementById("wyniki").style.display = "block";
+        }
+    </script>
+</body>
+</html>
